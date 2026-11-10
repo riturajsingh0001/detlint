@@ -1,0 +1,15 @@
+title: Misspelled Field
+id: 77777777-7777-4777-8777-777777777777
+description: Uses ComandLine instead of CommandLine.
+level: medium
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4688
+    ComandLine|contains: whoami
+  condition: selection
+tags:
+  - attack.discovery
+  - attack.t1087

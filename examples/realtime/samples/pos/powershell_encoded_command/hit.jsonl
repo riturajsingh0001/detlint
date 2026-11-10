@@ -1,0 +1,2 @@
+{"EventID":4688,"Image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"powershell.exe -nop -w hidden -enc SQBFAFgA","User":"CORP\\evil","Computer":"WS-03","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"powershell.exe -EncodedCommand JABzAD0A","User":"CORP\\evil","Computer":"WS-03","Channel":"Security"}

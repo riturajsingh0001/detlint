@@ -1,0 +1,82 @@
+name: detlint
+description: Lint, test, and map detection rules with detlint
+author: detlint contributors
+
+branding:
+  icon: shield
+  color: blue
+
+inputs:
+  path:
+    description: Rules directory or file to check
+    required: false
+    default: .
+  format:
+    description: Output format (pretty, json, sarif, markdown)
+    required: false
+    default: pretty
+  fail-on:
+    description: Minimum severity that fails the step (info, warning, error, never)
+    required: false
+    default: error
+  schema:
+    description: Optional schema directory
+    required: false
+    default: ""
+  args:
+    description: Extra arguments passed to detlint check
+    required: false
+    default: ""
+  sarif-file:
+    description: File to write when format is sarif
+    required: false
+    default: detlint.sarif
+  go-version:
+    description: Go toolchain used to build detlint
+    required: false
+    default: 1.23.x
+
+outputs:
+  sarif-file:
+    description: Path to the SARIF report (when format is sarif)
+    value: ${{ inputs.sarif-file }}
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ inputs.go-version }}
+        cache: false
+
+    - name: Build detlint
+      shell: bash
+      run: |
+        cd "$GITHUB_ACTION_PATH"
+        go build -trimpath -o "$RUNNER_TEMP/detlint" ./cmd/detlint
+
+    - name: Run detlint
+      shell: bash
+      env:
+        DETLINT_PATH: ${{ inputs.path }}
+        DETLINT_FORMAT: ${{ inputs.format }}
+        DETLINT_FAIL_ON: ${{ inputs.fail-on }}
+        DETLINT_SCHEMA: ${{ inputs.schema }}
+        DETLINT_ARGS: ${{ inputs.args }}
+        DETLINT_SARIF: ${{ inputs.sarif-file }}
+      run: |
+        set -euo pipefail
+        args=(check "$DETLINT_PATH" --format "$DETLINT_FORMAT" --fail-on "$DETLINT_FAIL_ON")
+        if [ -n "$DETLINT_SCHEMA" ]; then
+          args+=(--schema "$DETLINT_SCHEMA")
+        fi
+        if [ -n "$DETLINT_ARGS" ]; then
+          read -r -a extra <<< "$DETLINT_ARGS"
+          args+=("${extra[@]}")
+        fi
+        if [ "$DETLINT_FORMAT" = "sarif" ]; then
+          "$RUNNER_TEMP/detlint" "${args[@]}" > "$DETLINT_SARIF"
+        else
+          "$RUNNER_TEMP/detlint" "${args[@]}"
+        fi

@@ -1,0 +1,14 @@
+title: Bad Regex
+id: 99999999-9999-4999-8999-999999999999
+description: Invalid regular expression.
+level: medium
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    CommandLine|re: '(?<bad'
+  condition: selection
+tags:
+  - attack.execution
+  - attack.t1059.003

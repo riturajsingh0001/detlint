@@ -1,0 +1,16 @@
+title: Duplicate Event ID
+id: 7b0c9e31-2f8a-4d6b-a1c4-0e5f7d9b2a06
+description: This rule accidentally defines EventID twice.
+level: low
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4688
+    EventID: 4624
+    CommandLine|contains: 'whoami'
+  condition: selection
+tags:
+  - attack.discovery
+  - attack.t1087

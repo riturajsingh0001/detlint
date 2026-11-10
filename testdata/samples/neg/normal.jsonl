@@ -1,0 +1,2 @@
+{"EventID":4688,"Image":"C:\\Windows\\System32\\cmd.exe","CommandLine":"cmd.exe /c dir","User":"CORP\\alice","Computer":"WS-01","Channel":"Security"}
+{"EventID":4624,"LogonType":3,"TargetUserName":"CORP\\bob","IpAddress":"10.0.0.5","Computer":"DC-01","Channel":"Security"}

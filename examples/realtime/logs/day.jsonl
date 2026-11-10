@@ -1,0 +1,26 @@
+{"EventID":4688,"Image":"C:\\Windows\\System32\\cmd.exe","CommandLine":"cmd.exe /c dir C:\\Users","User":"CORP\\alice","Computer":"WS-01","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\notepad.exe","CommandLine":"notepad.exe","User":"CORP\\bob","Computer":"WS-02","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Tools\\mimikatz.exe","CommandLine":"mimikatz.exe \"privilege::debug\" \"sekurlsa::logonpasswords\"","User":"CORP\\evil","Computer":"WS-03","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"powershell.exe -NoProfile -Command Get-Process","User":"CORP\\alice","Computer":"WS-01","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"powershell.exe -nop -w hidden -enc SQBFAFgA","User":"CORP\\evil","Computer":"WS-03","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"powershell.exe -EncodedCommand JABzAD0A","User":"CORP\\evil","Computer":"WS-03","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"powershell.exe -File C:\\Scripts\\backup.ps1","User":"CORP\\svc_backup","Computer":"FS-01","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\procdump.exe","CommandLine":"procdump -ma lsass.exe C:\\Temp\\dump.dmp","User":"CORP\\evil","Computer":"WS-03","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\explorer.exe","CommandLine":"C:\\Windows\\explorer.exe","User":"CORP\\bob","Computer":"WS-02","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe","CommandLine":"chrome.exe --type=renderer","User":"CORP\\bob","Computer":"WS-02","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\rundll32.exe","CommandLine":"rundll32.exe user32.dll,LockWorkStation","User":"CORP\\alice","Computer":"WS-01","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\cmd.exe","CommandLine":"cmd.exe /c ping -n 4 10.0.0.5","User":"CORP\\svc_backup","Computer":"FS-01","Channel":"Security"}
+{"EventID":4624,"LogonType":3,"TargetUserName":"CORP\\svc_backup","IpAddress":"10.0.0.9","Computer":"FS-01","Channel":"Security"}
+{"EventID":4624,"LogonType":2,"TargetUserName":"CORP\\alice","IpAddress":"10.0.0.5","Computer":"WS-01","Channel":"Security"}
+{"EventID":4624,"LogonType":10,"TargetUserName":"CORP\\bob","IpAddress":"10.0.0.6","Computer":"WS-02","Channel":"Security"}
+{"EventID":4624,"LogonType":3,"TargetUserName":"WS-01$","IpAddress":"10.0.0.5","Computer":"DC-01","Channel":"Security"}
+{"EventID":4625,"LogonType":3,"TargetUserName":"CORP\\alice","IpAddress":"10.0.0.77","Computer":"DC-01","Channel":"Security"}
+{"EventID":4625,"LogonType":3,"TargetUserName":"CORP\\alice","IpAddress":"10.0.0.77","Computer":"DC-01","Channel":"Security"}
+{"EventID":4625,"LogonType":10,"TargetUserName":"CORP\\admin","IpAddress":"10.0.0.77","Computer":"DC-01","Channel":"Security"}
+{"EventID":4625,"LogonType":3,"TargetUserName":"CORP\\bob","IpAddress":"192.168.1.44","Computer":"DC-01","Channel":"Security"}
+{"EventID":4625,"LogonType":3,"TargetUserName":"WS-02$","IpAddress":"10.0.0.6","Computer":"DC-01","Channel":"Security"}
+{"EventID":4625,"LogonType":3,"TargetUserName":"MACHINE01$","IpAddress":"10.0.0.8","Computer":"DC-01","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\cmd.exe","CommandLine":"cmd.exe /c whoami /all","User":"CORP\\evil","Computer":"WS-03","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"powershell.exe -Command \"Get-Service | Where-Object Status -eq Running\"","User":"CORP\\alice","Computer":"WS-01","Channel":"Security"}
+{"EventID":4634,"TargetUserName":"CORP\\alice","Computer":"WS-01","Channel":"Security"}
+{"EventID":4672,"SubjectUserName":"CORP\\admin","Computer":"DC-01","Channel":"Security"}

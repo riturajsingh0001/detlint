@@ -1,0 +1,18 @@
+title: Logon From Impossible Event
+id: 9a7e1c22-4d5b-4f80-9c11-2b8e6d0a7c04
+description: Intended to catch interactive logons from a service account.
+level: high
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4624
+    LogonType: 10
+  filter:
+    EventID: 4624
+    LogonType: 3
+  condition: selection and filter
+tags:
+  - attack.lateral-movement
+  - attack.t1021.001

@@ -1,0 +1,68 @@
+name: linux_auditd
+product: linux
+service: auditd
+description: Linux auditd execve and syscall records.
+fields:
+  - name: type
+    type: string
+    required: true
+    enum: [EXECVE, SYSCALL, USER_AUTH, USER_ACCT, USER_LOGIN, USER_CMD, CRED_ACQ, CRED_DISP, SERVICE_START, SERVICE_STOP, CONFIG_CHANGE, LOGIN, ANOM_ABEND, AVC, NETFILTER_CFG, ADD_USER, DEL_USER, ADD_GROUP, DEL_GROUP]
+  - name: record_type
+    type: string
+  - name: exe
+    type: string
+  - name: comm
+    type: string
+  - name: key
+    type: string
+  - name: uid
+    type: int
+  - name: gid
+    type: int
+  - name: auid
+    type: int
+  - name: euid
+    type: int
+  - name: suid
+    type: int
+  - name: fsuid
+    type: int
+  - name: pid
+    type: int
+  - name: ppid
+    type: int
+  - name: syscall
+    type: string
+  - name: arch
+    type: string
+  - name: success
+    type: string
+    enum: [yes, no]
+  - name: a0
+    type: string
+  - name: a1
+    type: string
+  - name: a2
+    type: string
+  - name: a3
+    type: string
+  - name: cwd
+    type: string
+  - name: name
+    type: string
+  - name: path
+    type: string
+  - name: proctitle
+    type: string
+  - name: terminal
+    type: string
+  - name: addr
+    type: ip
+  - name: hostname
+    type: string
+  - name: tty
+    type: string
+  - name: ses
+    type: int
+  - name: res
+    type: string

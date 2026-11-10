@@ -1,0 +1,1 @@
+{"EventID":4688,"Image":"C:\\Windows\\System32\\wmic.exe","CommandLine":"wmic process call create notepad.exe","User":"CORP\\alice","Computer":"WS-01","Channel":"Security"}

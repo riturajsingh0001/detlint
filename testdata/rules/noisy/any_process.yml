@@ -1,0 +1,14 @@
+title: Any Process
+id: 66666666-6666-4666-8666-666666666666
+description: Every process creation event.
+level: low
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4688
+  condition: selection
+tags:
+  - attack.execution
+  - attack.t1059

@@ -1,0 +1,16 @@
+title: Duplicate Key Rule
+id: 22222222-2222-4222-8222-222222222222
+description: Defines EventID twice.
+level: low
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4688
+    EventID: 4624
+    CommandLine|contains: whoami
+  condition: selection
+tags:
+  - attack.discovery
+  - attack.t1087

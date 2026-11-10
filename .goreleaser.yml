@@ -1,0 +1,47 @@
+version: 2
+
+project_name: detlint
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: detlint
+    main: ./cmd/detlint
+    binary: detlint
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w
+      - -X github.com/riturajsingh0001/detlint/internal/cli.Version={{.Version}}
+      - -X github.com/riturajsingh0001/detlint/internal/cli.Commit={{.ShortCommit}}
+      - -X github.com/riturajsingh0001/detlint/internal/cli.Date={{.Date}}
+
+archives:
+  - formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+
+release:
+  draft: false
+  prerelease: auto

@@ -1,0 +1,49 @@
+{
+  "tool": "detlint",
+  "version": "test",
+  "summary": {
+    "total": 3,
+    "error": 1,
+    "warning": 1,
+    "info": 1,
+    "rules": 2
+  },
+  "findings": [
+    {
+      "pass": "metadata",
+      "severity": "warning",
+      "file": "rules/one.yml",
+      "line": 1,
+      "col": 1,
+      "end_line": 1,
+      "end_col": 6,
+      "rule_id": "one",
+      "rule_title": "One",
+      "message": "rule has no level",
+      "help": "Set level."
+    },
+    {
+      "pass": "typos",
+      "severity": "error",
+      "file": "rules/two.yml",
+      "line": 5,
+      "col": 5,
+      "end_line": 5,
+      "end_col": 14,
+      "rule_id": "two",
+      "rule_title": "Two",
+      "message": "unknown field \"ComandLine\" in selection \"selection\" (schema \"windows_security\"); did you mean \"CommandLine\"?",
+      "help": "Did you mean \"CommandLine\"?"
+    },
+    {
+      "pass": "wildcard",
+      "severity": "info",
+      "file": "rules/two.yml",
+      "line": 14,
+      "col": 3,
+      "rule_id": "two",
+      "rule_title": "Two",
+      "message": "info only"
+    }
+  ]
+}

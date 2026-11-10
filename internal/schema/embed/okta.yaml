@@ -1,0 +1,45 @@
+name: okta
+product: okta
+service: okta
+description: Okta System Log authentication and administration events.
+fields:
+  - name: eventType
+    type: string
+    required: true
+  - name: displayMessage
+    type: string
+  - name: actor.alternateId
+    type: string
+  - name: actor.displayName
+    type: string
+  - name: actor.id
+    type: string
+  - name: client.ipAddress
+    type: ip
+  - name: client.userAgent.rawUserAgent
+    type: string
+  - name: client.geographicalContext.country
+    type: string
+  - name: client.geographicalContext.city
+    type: string
+  - name: outcome.result
+    type: string
+    enum: [SUCCESS, FAILURE, SKIPPED, ALLOW, DENY, CHALLENGE]
+  - name: outcome.reason
+    type: string
+  - name: target.id
+    type: string
+  - name: target.type
+    type: string
+  - name: target.alternateId
+    type: string
+  - name: target.displayName
+    type: string
+  - name: severity
+    type: string
+  - name: debugContext.debugData.requestUri
+    type: string
+  - name: published
+    type: datetime
+  - name: uuid
+    type: guid

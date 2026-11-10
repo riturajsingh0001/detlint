@@ -1,0 +1,5 @@
+/detlint
+/detlint.exe
+/dist/
+/coverage.out
+/detlint.sarif

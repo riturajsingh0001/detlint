@@ -1,0 +1,1 @@
+{"EventID":4624,"LogonType":3,"CommandLine":"cmd.exe /c whoami","TargetUserName":"CORP\\bob","Computer":"DC-01","Channel":"Security"}

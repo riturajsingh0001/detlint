@@ -1,0 +1,3 @@
+{"EventID":4625,"LogonType":3,"TargetUserName":"WS-02$","IpAddress":"10.0.0.6","Computer":"DC-01","Channel":"Security"}
+{"EventID":4624,"LogonType":3,"TargetUserName":"CORP\\svc_backup","IpAddress":"10.0.0.9","Computer":"FS-01","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\cmd.exe","CommandLine":"cmd.exe /c dir C:\\Users","User":"CORP\\alice","Computer":"WS-01","Channel":"Security"}

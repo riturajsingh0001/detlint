@@ -1,0 +1,16 @@
+title: Any Successful Or Failed Logon
+id: 0c2e4a86-5f9b-4d17-a3e8-1b7c9d6f2a10
+description: Fires on every 4624 and 4625 event.
+level: low
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID:
+      - 4624
+      - 4625
+  condition: selection
+tags:
+  - attack.credential-access
+  - attack.t1110

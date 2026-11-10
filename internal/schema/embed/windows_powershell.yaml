@@ -1,0 +1,44 @@
+name: windows_powershell
+product: windows
+service: powershell
+description: PowerShell operational and classic script block logging.
+fields:
+  - name: EventID
+    type: int
+    required: true
+    enum: [400, 403, 600, 800, 4103, 4104, 4688]
+  - name: Channel
+    type: string
+    enum: [Microsoft-Windows-PowerShell/Operational, Windows PowerShell]
+  - name: Computer
+    type: string
+  - name: User
+    type: string
+  - name: UserID
+    type: string
+  - name: ScriptBlockText
+    type: string
+  - name: ScriptBlockId
+    type: guid
+  - name: Path
+    type: string
+  - name: CommandLine
+    type: string
+  - name: Image
+    type: string
+  - name: ParentImage
+    type: string
+  - name: Message
+    type: string
+  - name: EngineVersion
+    type: string
+  - name: HostApplication
+    type: string
+  - name: HostName
+    type: string
+  - name: RunspaceId
+    type: guid
+  - name: Payload
+    type: string
+  - name: SequenceNumber
+    type: int

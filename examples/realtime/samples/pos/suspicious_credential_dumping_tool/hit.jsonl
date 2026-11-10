@@ -1,0 +1,2 @@
+{"EventID":4688,"Image":"C:\\Tools\\mimikatz.exe","CommandLine":"mimikatz.exe \"privilege::debug\" \"sekurlsa::logonpasswords\"","User":"CORP\\evil","Computer":"WS-03","Channel":"Security"}
+{"EventID":4688,"Image":"C:\\Windows\\System32\\procdump.exe","CommandLine":"procdump -ma lsass.exe C:\\Temp\\dump.dmp","User":"CORP\\evil","Computer":"WS-03","Channel":"Security"}

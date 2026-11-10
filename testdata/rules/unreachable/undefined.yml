@@ -1,0 +1,14 @@
+title: Undefined Selection Rule
+id: 33333333-3333-4333-8333-333333333333
+description: References a filter that does not exist.
+level: medium
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4625
+  condition: selection and not filter_missing
+tags:
+  - attack.credential-access
+  - attack.t1110

@@ -1,0 +1,27 @@
+title: PowerShell Encoded Command
+id: 1b2c3d4e-5f6a-4b7c-8d9e-0f1a2b3c4d5e
+status: stable
+description: Detects PowerShell launched with an encoded command line.
+author: you
+date: 2026-11-10
+level: high
+
+logsource:
+  product: windows
+  service: security
+
+detection:
+  selection:
+    EventID: 4688
+    Image|endswith: '\powershell.exe'
+    CommandLine|contains:
+      - '-enc'
+      - '-encodedcommand'
+  condition: selection
+
+falsepositives:
+  - Legitimate administration scripts
+
+tags:
+  - attack.execution
+  - attack.t1059.001

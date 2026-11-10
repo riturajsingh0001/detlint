@@ -1,0 +1,14 @@
+title: Impossible Event ID
+id: 44444444-4444-4444-8444-444444444444
+description: Uses an event id the schema does not allow.
+level: low
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 9999
+  condition: selection
+tags:
+  - attack.execution
+  - attack.t1059

@@ -1,0 +1,10 @@
+{"EventID":4688,"Channel":"Security","Image":"C:\\Windows\\System32\\cmd.exe","CommandLine":"cmd.exe /c dir","User":"CORP\\alice","Computer":"WS-01"}
+{"EventID":4688,"Channel":"Security","Image":"C:\\Windows\\System32\\notepad.exe","CommandLine":"notepad.exe notes.txt","User":"CORP\\bob","Computer":"WS-02"}
+{"EventID":4688,"Channel":"Security","Image":"C:\\Windows\\System32\\svchost.exe","CommandLine":"svchost.exe -k netsvcs","User":"NT AUTHORITY\\SYSTEM","Computer":"WS-03"}
+{"EventID":4688,"Channel":"Security","Image":"C:\\Windows\\System32\\wmic.exe","CommandLine":"wmic process call create notepad.exe","User":"CORP\\carol","Computer":"WS-01"}
+{"EventID":4688,"Channel":"Security","Image":"C:\\Windows\\System32\\whoami.exe","CommandLine":"whoami /all","User":"CORP\\alice","Computer":"WS-02"}
+{"EventID":4688,"Channel":"Security","Image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"powershell.exe -nop -enc SQBFAFgA","User":"CORP\\bob","Computer":"WS-03"}
+{"EventID":4624,"Channel":"Security","LogonType":3,"TargetUserName":"CORP\\alice","IpAddress":"10.0.0.5","Computer":"DC-01"}
+{"EventID":4624,"Channel":"Security","LogonType":10,"TargetUserName":"CORP\\bob","IpAddress":"10.0.0.6","Computer":"WS-01"}
+{"EventID":4625,"Channel":"Security","LogonType":3,"TargetUserName":"CORP\\carol","IpAddress":"10.0.0.7","Computer":"DC-01"}
+{"EventID":4663,"Channel":"Security","ObjectName":"C:\\Windows\\System32\\lsass.exe","AccessMask":"0x1010","User":"CORP\\mallory","Computer":"WS-03"}

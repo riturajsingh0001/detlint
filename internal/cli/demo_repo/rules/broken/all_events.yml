@@ -1,0 +1,12 @@
+title: Alert On All The Things
+id: 2d4f6a18-9b3c-4e70-8d21-7c5a0f3e9b07
+description: The selection was left empty during a refactor.
+level: high
+logsource:
+  product: windows
+  service: security
+detection:
+  selection: {}
+  condition: selection
+tags:
+  - attack.execution

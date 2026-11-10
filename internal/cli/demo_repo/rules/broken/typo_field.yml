@@ -1,0 +1,15 @@
+title: Suspicious WMI Process Creation
+id: 5d2f8b70-91c4-4a3e-b0d7-6e4c1a9f3b03
+description: Looks for wmic being used to spawn processes.
+level: medium
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4688
+    ComandLine|contains: 'wmic'
+  condition: selection
+tags:
+  - attack.execution
+  - attack.t1047

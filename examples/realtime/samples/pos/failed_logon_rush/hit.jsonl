@@ -1,0 +1,2 @@
+{"EventID":4625,"LogonType":3,"TargetUserName":"CORP\\alice","IpAddress":"10.0.0.77","Computer":"DC-01","Channel":"Security"}
+{"EventID":4625,"LogonType":10,"TargetUserName":"CORP\\admin","IpAddress":"10.0.0.77","Computer":"DC-01","Channel":"Security"}

@@ -1,0 +1,192 @@
+name: windows_security
+product: windows
+service: security
+description: Windows Security event log (Security channel).
+fields:
+  - name: EventID
+    type: int
+    required: true
+    description: Windows event identifier.
+    enum:
+      [1102, 4624, 4625, 4634, 4647, 4648, 4656, 4657, 4661, 4662, 4663,
+       4672, 4673, 4674, 4688, 4689, 4697, 4698, 4699, 4700, 4702, 4719,
+       4720, 4722, 4723, 4724, 4725, 4726, 4728, 4732, 4738, 4740, 4756,
+       4767, 4768, 4769, 4771, 4776, 4778, 4779, 4781, 4946, 4947, 4948,
+       4950, 4954, 4956, 4957, 4958, 5140, 5141, 5145, 5156, 5157]
+  - name: Channel
+    type: string
+    enum: [Security]
+  - name: Computer
+    type: string
+  - name: ProviderName
+    type: string
+  - name: User
+    type: string
+  - name: UserID
+    type: string
+  - name: SubjectUserName
+    type: string
+  - name: SubjectDomainName
+    type: string
+  - name: SubjectUserSid
+    type: string
+  - name: TargetUserName
+    type: string
+  - name: TargetDomainName
+    type: string
+  - name: TargetUserSid
+    type: string
+  - name: MemberName
+    type: string
+  - name: MemberSid
+    type: string
+  - name: GroupName
+    type: string
+  - name: CommandLine
+    type: string
+  - name: Image
+    type: string
+  - name: ParentImage
+    type: string
+  - name: ParentCommandLine
+    type: string
+  - name: CurrentDirectory
+    type: string
+  - name: ProcessId
+    type: int
+  - name: NewProcessId
+    type: int
+  - name: ProcessName
+    type: string
+  - name: ServiceName
+    type: string
+  - name: ServiceFileName
+    type: string
+  - name: ServiceType
+    type: string
+  - name: ServiceStartType
+    type: string
+  - name: TaskName
+    type: string
+  - name: TaskContent
+    type: string
+  - name: TargetObject
+    type: string
+  - name: ObjectName
+    type: string
+  - name: AccessMask
+    type: string
+  - name: GrantedAccess
+    type: string
+  - name: LogonType
+    type: int
+    enum: [2, 3, 4, 5, 7, 8, 9, 10, 11]
+  - name: IpAddress
+    type: ip
+  - name: SourceIp
+    type: ip
+  - name: DestinationIp
+    type: ip
+  - name: DestinationPort
+    type: int
+  - name: WorkstationName
+    type: string
+  - name: ShareName
+    type: string
+  - name: RelativeTargetName
+    type: string
+  - name: Status
+    type: string
+  - name: SubStatus
+    type: string
+  - name: FailureReason
+    type: string
+  - name: ScriptBlockText
+    type: string
+  - name: ScriptBlockId
+    type: guid
+  - name: Path
+    type: string
+  - name: QueryName
+    type: string
+  - name: QueryResults
+    type: string
+  - name: HiveName
+    type: string
+  - name: KeyName
+    type: string
+  - name: ValueName
+    type: string
+  - name: Data
+    type: string
+  - name: FileName
+    type: string
+  - name: TargetFilename
+    type: string
+  - name: ImageLoaded
+    type: string
+  - name: Signed
+    type: bool
+  - name: Signature
+    type: string
+  - name: SignatureStatus
+    type: string
+  - name: Product
+    type: string
+  - name: OriginalFileName
+    type: string
+  - name: IntegrityLevel
+    type: string
+  - name: CallerProcessName
+    type: string
+  - name: Device
+    type: string
+  - name: ClassName
+    type: string
+  - name: DriveLetter
+    type: string
+  - name: PartitionName
+    type: string
+  - name: VolumeName
+    type: string
+  - name: SerialNumber
+    type: string
+  - name: TicketOptions
+    type: string
+  - name: TicketEncryptionType
+    type: string
+  - name: ServicePrincipalName
+    type: string
+  - name: TargetServerName
+    type: string
+  - name: RemoteUser
+    type: string
+  - name: AuthenticationPackageName
+    type: string
+  - name: LmPackageName
+    type: string
+  - name: KeyLength
+    type: int
+  - name: ImpersonationLevel
+    type: string
+  - name: VirtualAccount
+    type: string
+  - name: TargetLogonId
+    type: string
+  - name: SubjectLogonId
+    type: string
+  - name: LogonGuid
+    type: guid
+  - name: TargetOutboundUserName
+    type: string
+  - name: TargetOutboundDomainName
+    type: string
+eventids:
+  - {id: 4688, name: Process Creation}
+  - {id: 4624, name: Logon Success}
+  - {id: 4625, name: Logon Failure}
+  - {id: 4672, name: Special Privileges Assigned}
+  - {id: 4720, name: User Account Created}
+  - {id: 4768, name: Kerberos TGT Requested}
+  - {id: 4769, name: Kerberos Service Ticket Requested}
+  - {id: 1102, name: Audit Log Cleared}

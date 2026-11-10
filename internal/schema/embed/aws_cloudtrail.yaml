@@ -1,0 +1,56 @@
+name: aws_cloudtrail
+product: aws
+service: cloudtrail
+description: AWS CloudTrail management and data events.
+fields:
+  - name: eventName
+    type: string
+    required: true
+  - name: eventSource
+    type: string
+    required: true
+  - name: eventTime
+    type: datetime
+  - name: awsRegion
+    type: string
+  - name: sourceIPAddress
+    type: ip
+  - name: userAgent
+    type: string
+  - name: userIdentity.type
+    type: string
+    enum: [Root, IAMUser, AssumedRole, FederatedUser, AWSService, AWSAccount]
+  - name: userIdentity.arn
+    type: string
+  - name: userIdentity.accountId
+    type: string
+  - name: userIdentity.principalId
+    type: string
+  - name: userIdentity.sessionContext.sessionIssuer.arn
+    type: string
+  - name: recipientAccountId
+    type: string
+  - name: requestParameters
+    type: string
+  - name: responseElements
+    type: string
+  - name: requestID
+    type: string
+  - name: eventID
+    type: guid
+  - name: errorCode
+    type: string
+  - name: errorMessage
+    type: string
+  - name: readOnly
+    type: bool
+  - name: managementEvent
+    type: bool
+  - name: eventType
+    type: string
+  - name: resources
+    type: string
+  - name: tlsDetails.tlsVersion
+    type: string
+  - name: additionalEventData
+    type: string

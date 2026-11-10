@@ -1,0 +1,26 @@
+title: Failed Logon Rush
+id: 9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d
+status: test
+description: Detects failed interactive logons from user accounts, ignoring machine accounts.
+author: you
+date: 2026-11-10
+level: medium
+
+logsource:
+  product: windows
+  service: security
+
+detection:
+  selection:
+    EventID: 4625
+  filter_machine:
+    TargetUserName|endswith: '$'
+  condition: selection and not filter_machine
+
+falsepositives:
+  - Password typos
+  - Service account misconfiguration
+
+tags:
+  - attack.credential-access
+  - attack.t1110

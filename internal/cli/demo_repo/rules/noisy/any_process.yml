@@ -1,0 +1,15 @@
+title: Any Process Created
+id: 4b6d8f20-3a1c-4e95-b7d2-8f0a5c3e1d09
+status: test
+description: Every process creation event. Useful as a baseline, terrible as an alert.
+level: low
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4688
+  condition: selection
+tags:
+  - attack.execution
+  - attack.t1059

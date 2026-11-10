@@ -1,0 +1,14 @@
+title: Broken Regular Expression
+id: 6f8a2c04-1d7e-4b39-9e60-3a2b8d5c1f08
+description: A regex with an unclosed group.
+level: medium
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    CommandLine|re: '(?<bad'
+  condition: selection
+tags:
+  - attack.execution
+  - attack.t1059.003
