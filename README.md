@@ -31,21 +31,82 @@ It is designed to be the required check on a detection-as-code pull request:
 
 ## Install
 
-Requires Go 1.23 or newer.
+`detlint` runs on **Linux (Kali, Ubuntu, Debian, …), Windows, and macOS**.
+It requires Go 1.23 or newer to build, and the resulting binary has no runtime
+dependencies.
+
+### Linux (Kali / Ubuntu / Debian)
+
+**Option A — install with Go:**
 
 ```console
+sudo apt update
+sudo apt install golang-go -y
+go version                              # must be 1.23 or newer
 go install github.com/riturajsingh0001/detlint/cmd/detlint@latest
+export PATH="$PATH:$(go env GOPATH)/bin"
+detlint version
 ```
 
-Or build from a checkout:
+Add the `export PATH=...` line to `~/.bashrc` to make it permanent. If your
+distro ships an older Go, install the current release from <https://go.dev/dl/>.
+
+**Option B — build from source:**
 
 ```console
 git clone https://github.com/riturajsingh0001/detlint
 cd detlint
 go build -o detlint ./cmd/detlint
+sudo install -m 755 detlint /usr/local/bin/detlint
+detlint version
 ```
 
-The binary has no runtime dependencies.
+### Windows
+
+**Option A — install with Go (PowerShell):**
+
+```powershell
+winget install GoLang.Go                # or download the MSI from https://go.dev/dl/
+go install github.com/riturajsingh0001/detlint/cmd/detlint@latest
+$env:Path += ";$env:USERPROFILE\go\bin"
+detlint version
+```
+
+To make `detlint` available in every new terminal, add `%USERPROFILE%\go\bin` to
+your user `PATH` (Settings → System → About → Advanced system settings →
+Environment Variables).
+
+**Option B — build from source:**
+
+```powershell
+git clone https://github.com/riturajsingh0001/detlint
+cd detlint
+go build -o detlint.exe ./cmd/detlint
+.\detlint.exe version
+```
+
+### macOS
+
+**Option A — install with Go:**
+
+```console
+brew install go                          # Apple Silicon and Intel both supported
+go install github.com/riturajsingh0001/detlint/cmd/detlint@latest
+export PATH="$PATH:$(go env GOPATH)/bin"
+detlint version
+```
+
+**Option B — build from source:**
+
+```console
+git clone https://github.com/riturajsingh0001/detlint
+cd detlint
+go build -o detlint ./cmd/detlint
+./detlint version
+```
+
+The binary is a single static file — copy it anywhere (`/usr/local/bin`,
+`C:\Tools`, `/opt`) and it keeps working offline.
 
 ## Quick start
 
