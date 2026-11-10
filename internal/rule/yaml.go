@@ -118,13 +118,6 @@ func (n *Node) IsNull() bool {
 	return n == nil || (n.Kind == ScalarNode && n.Null)
 }
 
-type rawLine struct {
-	num    int
-	raw    string
-	indent int
-	blank  bool
-}
-
 type yline struct {
 	num    int
 	indent int

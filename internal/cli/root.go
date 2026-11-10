@@ -162,8 +162,7 @@ func reorderArgs(fs *flag.FlagSet, args []string) ([]string, error) {
 			continue
 		}
 		name := strings.TrimLeft(a, "-")
-		if eq := strings.Index(name, "="); eq >= 0 {
-			name = name[:eq]
+		if strings.Contains(name, "=") {
 			flags = append(flags, a)
 			continue
 		}

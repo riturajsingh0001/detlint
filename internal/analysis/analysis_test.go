@@ -407,7 +407,8 @@ func TestFingerprintAndSpan(t *testing.T) {
 	if len(f.Fingerprint()) != 40 {
 		t.Fatalf("fingerprint = %q", f.Fingerprint())
 	}
-	if f.Fingerprint() != f.Fingerprint() {
+	first, second := f.Fingerprint(), f.Fingerprint()
+	if first != second {
 		t.Fatal("fingerprint should be stable")
 	}
 	other := f

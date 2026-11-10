@@ -158,7 +158,7 @@ func yamlString(s string) string {
 	}
 	safe := true
 	for _, r := range s {
-		if !(r >= 'a' && r <= 'z' || r >= 'A' && r <= 'Z' || r >= '0' && r <= '9' || strings.ContainsRune("._-/", r)) {
+		if !yamlSafeRune(r) {
 			safe = false
 			break
 		}
@@ -167,4 +167,12 @@ func yamlString(s string) string {
 		return s
 	}
 	return strconv.Quote(s)
+}
+
+// yamlSafeRune reports whether r may appear unquoted in a plain YAML scalar.
+func yamlSafeRune(r rune) bool {
+	return r >= 'a' && r <= 'z' ||
+		r >= 'A' && r <= 'Z' ||
+		r >= '0' && r <= '9' ||
+		strings.ContainsRune("._-/", r)
 }
